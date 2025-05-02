@@ -3,30 +3,33 @@ package partB.storage;
 
 import partB.animals.Cat;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CatHouse {
-    private static AnimalWarehouse<Cat> catHouse = new AnimalWarehouse<>();
+    private static Map<Integer, Cat> catMap = new HashMap<>();
 
     public static void add(Cat cat) {
-        catHouse.add(cat);
+        catMap.put(cat.getId(), cat);
     }
 
     public static void remove(Integer id) {
-        catHouse.removeAnimalById(id);
+        catMap.remove(id);
     }
 
     public static void remove(Cat cat) {
-        catHouse.removeAnimal(cat);
+        catMap.remove(cat.getId());
     }
 
     public static Cat getCatById(Integer id) {
-        return catHouse.getAnimalById(id);
+        return catMap.get(id);
     }
 
     public static Integer getNumberOfCats() {
-        return catHouse.getNumberOfAnimals();
+        return catMap.size();
     }
 
     public static void clear() {
-        catHouse.clear();
+        catMap.clear();
     }
 }

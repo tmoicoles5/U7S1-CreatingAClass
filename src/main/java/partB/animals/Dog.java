@@ -3,8 +3,11 @@ package partB.animals;
 import java.util.Date;
 
 public class Dog extends Mammal {
-    public Dog(String name, Date birthDate, Integer id) {
-        super(name, birthDate, id);
+    private int id;
+
+    public Dog(String name, Date birthDate, int id) {
+        super(name, birthDate,id);
+        this.id = id;
     }
 
     public String speak() {

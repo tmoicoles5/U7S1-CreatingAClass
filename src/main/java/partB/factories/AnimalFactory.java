@@ -1,21 +1,16 @@
 package partB.factories;
 
-
-import partB.animals.Cat;
-import partB.storage.CatHouse;
-import partB.storage.DogHouse;
 import partB.animals.Dog;
-
 import java.util.Date;
 
 public class AnimalFactory {
-    public static Dog createDog(String name, Date birthDate) {
-        Integer newId = DogHouse.getNumberOfDogs();
-        return new Dog(name, birthDate, newId);
+
+    public Dog createDog(String name, Date birthDate) {
+        int id = generateId();
+        return new Dog(name, birthDate, id);
     }
 
-    public static Cat createCat(String name, Date birthDate) {
-        Integer newId = CatHouse.getNumberOfCats();
-        return new Cat(name, birthDate, newId);
+    private int generateId() {
+        return (int) (Math.random() * 10000);
     }
 }

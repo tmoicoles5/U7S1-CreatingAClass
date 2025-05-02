@@ -3,30 +3,36 @@ package partB.storage;
 
 import partB.animals.Dog;
 
-public class DogHouse {
-    private static AnimalWarehouse<Dog> dogHouse = new AnimalWarehouse<>();
 
+import java.util.HashMap;
+import java.util.Map;
+
+public class DogHouse {
+    private static Map<Integer, Dog> dogMap = new HashMap<>();
+
+
+    public static void clear() {
+        dogMap.clear();
+    }
     public static void add(Dog dog) {
-        dogHouse.add(dog);
+        dogMap.put(dog.getId(),dog);
     }
 
     public static void remove(Integer id) {
-        dogHouse.removeAnimalById(id);
+        dogMap.remove(id);
     }
 
     public static void remove(Dog dog) {
-        dogHouse.removeAnimal(dog);
+        dogMap.remove(dog.getId());
     }
 
     public static Dog getDogById(Integer id) {
-        return dogHouse.getAnimalById(id);
+        return dogMap.get(id);
     }
 
     public static Integer getNumberOfDogs() {
-        return dogHouse.getNumberOfAnimals();
+        return dogMap.size();
     }
 
-    public static void clear() {
-        dogHouse.clear();
+
     }
-}

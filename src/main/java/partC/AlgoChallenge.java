@@ -1,8 +1,32 @@
 package partC;
-
 public class AlgoChallenge {
 
-     /* Problem 1
+
+    public static Boolean oneTeen(int person1, int person2) {
+        boolean isTeen1 = person1 >= 13 && person1 <= 19;
+        boolean isTeen2 = person2 >= 13 && person2 <= 19;
+        return isTeen1 ^ isTeen2;
+    }
+
+
+    public static String beginWithOz(String ounces) {
+        String result = "";
+
+        if (ounces.length() >= 1 && ounces.charAt(0) == 'o') {
+            result += "o";
+        }
+        if (ounces.length() >= 2 && ounces.charAt(1) == 'z') {
+            result += "z";
+        }
+
+        return result;
+    }
+}
+
+
+
+
+    /* Problem 1
       An upcoming artist's concert is coming to town.
       The concert manager is only allowing one person of a pair to be a "teen".
       Your at the front gate checking tickets and verifying ages.
@@ -17,12 +41,6 @@ public class AlgoChallenge {
       oneTeen(13, 13) --> false
      */
 
-    public static Boolean oneTeen(int person1, int person2) {
-
-        return null;
-    }
-
-
     /* Problem 2
     We're on the look-out for ounces "oz" within a string. You will be given a string,
     and you need to determine if the first two characters yields "oz".
@@ -36,9 +54,5 @@ public class AlgoChallenge {
     beginWithOz("oxx") --> "o"
      */
 
-    public static String beginWithOz(String ounces) {
 
-        return null;
-    }
 
-}
